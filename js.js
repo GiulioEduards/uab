@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Definimos los diferentes conjuntos de cards
     const cardSets = {
         'value-1': [
@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             </article>
+            
         `;
     }
 
@@ -150,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderCards(setId) {
         const container = document.getElementById('cards-container');
         container.innerHTML = '';
-        
+
         cardSets[setId].forEach(cardData => {
             container.innerHTML += createCardHTML(cardData);
         });
@@ -161,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Añadir event listeners a los radio buttons
     document.querySelectorAll('.radio-input input[type="radio"]').forEach(radio => {
-        radio.addEventListener('change', function() {
+        radio.addEventListener('change', function () {
             if (this.checked) {
                 renderCards(this.value);
             }
